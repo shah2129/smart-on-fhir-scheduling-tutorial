@@ -72,6 +72,8 @@ function slotHTML(id, type, start, end) {
          '</div>';
 }
 */
+
+/*
 function slotHTML(id, type, start, end) {
   console.log('Slot: id:[' + id + '] type:[' + type + '] start:[' + start + '] end:[' + end + ']');
 
@@ -86,6 +88,25 @@ function slotHTML(id, type, start, end) {
              "<p class='card-text'>End: " + prettyEnd + '</p>' +
              "<a href='javascript:void(0);' class='card-link' onclick='appointmentCreate(\"" +
                slotReference + "\", \"Patient/4704007\");'>Book</a>" +
+           '</div>' +
+         '</div>';
+}
+*/
+
+function slotHTML(id, type, start, end) {
+  console.log('Slot: id:[' + id + '] type:[' + type + '] start:[' + start + '] end:[' + end + ']');
+
+  var slotReference = 'Slot/' + id,
+      prettyStart = new Date(start),
+      prettyEnd = new Date(end);
+
+  return "<div class='card'>" +
+           "<div class='card-body'>" +
+             "<h5 class='card-title'>" + type + '</h5>' +
+             "<p class='card-text'>Start: " + prettyStart + '</p>' +
+             "<p class='card-text'>End: " + prettyEnd + '</p>' +
+             "<a href='javascript:void(0);' class='card-link' onclick='askForPatient(\"" +
+               slotReference + '", "' + type + '", "' + prettyStart + '", "' + prettyEnd + "\");'>Book</a>" +
            '</div>' +
          '</div>';
 }
